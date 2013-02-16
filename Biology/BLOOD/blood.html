@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset/reset-min.css" />
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<audio id="id1" src="Recordings/intro.m4a"></audio>
+		<audio id="id2" src="Recordings/composition.m4a"></audio>
+		<audio id="id3" src="Recordings/physiology.m4a"></audio>
+		<audio id="id4" src="Recordings/pathology.m4a"></audio>
+		<audio id="id5" src="Recordings/song.mp3"></audio>
+		<audio id="id6" src="Recordings/song2.m4a"></audio>
+		<script src="tracks.js" "></script>
+		
+		<div id="div1"> 
+			<h1>BLOOD </h1>  
+		</div>
+	</head>
+	
+	<body onload='one(); intro(); '>
+	
+ 		<canvas id='canvas' > </canvas>
+ 		<script src="main.js" "></script>
+		<script src="blood.js" "></script>
+		<script src="blood2.js" "></script>
+		<script src="blood3.js" "></script>
+		<script src="blood4.js" "></script>
+		<script src="blood5.js" "></script>
+		<div id="div2"> 
+				<ul>
+				<li><a onclick='one(); ' >HOME</a></li>
+				<li><a onclick='two(); comp();' >COMPOSITION</a></li>
+				<li><a onclick='three(); phys();' >PHYSIOLOGY</a></li>
+				<li><a onclick='four(); path();' > PATHOLOGY</a></li>
+				<li><a onclick='five()' >	ART</a></li>
+				<li><a onclick='stop()' >STOP</a></li>
+				</ul>
+		</div>
+	</body>
+	
+</html>
