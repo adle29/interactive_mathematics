@@ -4,101 +4,128 @@
     <meta charset="UTF-8" />
 
 	<head>
-		 <link rel="stylesheet" href="default.css" type="text/css" media="all" />
+		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
+		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
 		 <script type="text/javascript" src="jsxgraphcore.js"></script>
-		 <a href="index.html"> <button type="button">Home </button> </a>
+		 
 
 		 <title>Funciones 1.1</title>
 	</head>
 	
 	
-	<body onload="pag1()">
-		<article style="height:1500px;">
-            <header > <h1 id="title" > FUNCIONES</h1></header> 
-            <div >  <p id="edit" contenteditable="true"> 
-            1. Los tres hermanos Perez asistieron al cine. El boleto de entrada cuesta $40.00:
-           <ul ><li> a)¿Cuánto pagaron por las tres entradas?</li>
-            <li>b)Si cada uno llevó un invitado, ¿cuánto se pagó en total para que todos entraran?</li>
-            <li>c)Si además asistieron los padres de los hermanos Pérez, ¿cuánto se pagó por todos? </li></ul>
+	<body onload="pag1()" >
+		
+           <!-- HEADER -->
+            <div id="header_wrap" class="outer">
+				<header class="inner">
+					<h2 id="project_tagline">Interactive Mathematics</h2>
+					<h1 id="project_title">Funciones</h1>
+				</header>
+           </div>
             
-            A partir de la información anterior, completen la siguiente tabla:</p> </div>
+            <div id="main_content_wrap" class="outer">
+            <ul>
+            <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
+			<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Mathematics</a>
+            </ul>
             
-            <div id="jxgbox" class="jxgbox" style=" position:absolute; top:380px; left:500px; width:500px; height:500px;"></div>
-			
-			
-			<table style="width:540px;" border="1" contenteditable="true">
-				<tr>
-				<td><strong>Personas</strong></td>
-				<td>3</td>
+            <!-- MAIN CONTENT -->
+             <section id="main_content" class="inner">
+				 <p contenteditable="true"> 
+					1. Los tres hermanos Perez asistieron al cine. El boleto de entrada cuesta $40.00:
+				   <ul>
+				    <li> a)¿Cuánto pagaron por las tres entradas?</li>
+					<li>b)Si cada uno llevó un invitado, ¿cuánto se pagó en total para que todos entraran?</li>
+					<li>c)Si además asistieron los padres de los hermanos Pérez, ¿cuánto se pagó por todos? </li></ul>
+					
+					A partir de la información anterior, completen la siguiente tabla:
+				</p> 
 				
-				<td>4</td>
-				<td>6</td>
+				<div id="jxgbox" class="jxgbox" style="  width:500px; height:500px;"></div>
+				<br></br>
 				
-				<td>8</td>
-				<td></td>
-				</tr>
-				<tr>
-				<td><strong>Costo($)</strong></td>
-				<td>row 2, cell 2</td>
+				<table style="width:540px;" border="1" contenteditable="true">
+					<tr>
+					<td><strong>Personas</strong></td>
+					<td>3</td>
+					
+					<td>4</td>
+					<td>6</td>
+					
+					<td>8</td>
+					<td>?</td>
+					</tr>
+					<tr>
+					<td><strong>Costo($)</strong></td>
+					<td>?</td>
+					
+					<td>?</td>
+					<td>?</td>
+					<td>?</td>
+					<td>?</td>
+					</tr>
+				</table>
+					
+				<div id="uno"> <p> Observa la grafica y contesta:
+					<ul><li>a) ¿Cuánto se pagará por cinco personas?</li>
+					<li>b)¿Cuánto se pagará por nueve personas?</li></ul> </p>
+					
+				<p> <ul><li>1) ¿Cuántos se pagará por dos personas?</li>
+					<li> 2) Si se cuenta con $350.00 ¿cuál es el mayor número de personas que pueden ser invitadas ?</li></ul> </p>
 				
-				<td>row 2, cell 2</td>
-				<td>row 2, cell 2</td>
-				<td>row 2, cell 1</td>
-				<td>row 2, cell 2</td>
-				</tr>
-			</table>	
-			<div id="uno"> <p> Observa la grafica y contesta:
-				<ul><li>a) ¿Cuánto se pagará por cinco personas?</li>
-				<li>b)¿Cuánto se pagará por nueve personas?</li></ul> </p>
+				<p> En muchos fenómenos ocurre que una magnitud depende de otra, es decir, una está en la otra
+				FUNCIÓN de otra. En esta relación una de las variables será la VARIABLE DEPENDIENTE representado
+				y la otra será la VARIABLE INDEPENDIENTE. Gráficamente la variable independiente está el eje vertical,
+				es decir, el eje de las abscisas y la variable dependiente, por el eje vertical, es decir, el eje de
+				ordenadas. La notación utilizadas es: f(x)  </p> </div>
 				
-			<p> <ul><li>1) ¿Cuántos se pagará por dos personas?</li>
-				<li> 2) Si se cuenta con $350.00 ¿cuál es el mayor número de personas que pueden ser invitadas ?</li></ul> </p>
+			<div id="uno"> <p>	Las funciones puede expresarse mediante:
+				<ul> <li> Formulas. Ejemplo: Área de un circulo = </li>  
+				<li>Expresiones algebráicas (ecuaciones). Ejemplos: y=40x, y=x*x </li>
+				<li>Tablas de valores(tabulación)</li> 
+				<li> Graficas </li> </ul> 
+				
+				RAZÓN: es un cociente que expresa la relación que hay entre el numerador y el denominador. </p> </div>
+				
+				<div id="uno"> <p>Actividad: analiza la siguiente gráfica que muestra los cambios en el precio de un artículo
+				durante los primeros meses del año, posteriormente responde a las preguntas. </p> </div>
+				
+			<div id="jxgbox1" class="jxgbox" style="  width:500px; height:500px;"></div>
 			
-			<p> En muchos fenómenos ocurre que una magnitud depende de otra, es decir, una está en la otra
-			FUNCIÓN de otra. En esta relación una de las variables será la VARIABLE DEPENDIENTE representado
-			y la otra será la VARIABLE INDEPENDIENTE. Gráficamente la variable independiente está el eje vertical,
-			es decir, el eje de las abscisas y la variable dependiente, por el eje vertical, es decir, el eje de
-			ordenadas. La notación utilizadas es: f(x)  </p> </div>
+			<div id="uno" > <p> 
+			<ul> 
+				<li> a) ¿Cuánto vario el precio del primero al tercer mes? Cambia de a  ,es decir     </li> 
+				<li> b) ¿Cuánto vario el precio del primer al cuarto mes? </li> 
+				<li> c) Suponiendo que el incremento fue el mismo cada mes ¿cuánto vario el
+				el precio del tercero al sexto mes? </li> 
+				<li> d) ¿Cuál es el incremento mensual del precio del artículo? </li> 
+				<li> e) Si el primer mes corresponde a enero ¿cuál es el precio del artículo en 
+				marzo? </li> 
+				<li> f) Si el primer mes corresponde a enero ¿cuál es el precio del artículo en diciembre? </li> 
+				<li> g) Respecto al inciso a, encuentren el cociente del incremento en el precio entre el número
+				de meses, es decir la "razón de cambio". Encuentra la razón de cambio en los incisos b y c y 
+				compárenla con la del inciso a. ¿Cómo son?     </li> 
+				<li> h) ¿Qué relación tiene las razones de cambio que encontraste en el inciso g y la respuesta
+				del inciso d? </li> 
+			</ul></p> </div>
 			
-		<div id="uno"> <p>	Las funciones puede expresarse mediante:
-			<ul> <li> Formulas. Ejemplo: Área de un circulo = </li>  
-			<li>Expresiones algebráicas (ecuaciones). Ejemplos: y=40x, y=x*x </li>
-			<li>Tablas de valores(tabulación)</li> 
-			<li> Graficas </li> </ul> 
+			<h3>En conclusión, para cualesquiera dos
+			puntos en la gráfica (recta) la razón de cambio es la misma, es decir, es 
+			CONSTANTE. Esto significa que existe PROPORCIONALIDAD. </h3>
 			
-			RAZÖN: es un cociente que expresa la relación que hay entre el numerador y el denominador. </p> </div>
 			
-			<div id="uno"> <p>Actividad: analiza la siguiente gráfica que muestra los cambios en el precio de un artículo
-			durante los primeros meses del año, posteriormente responde a las preguntas. </p> </div>
-			
-		<div id="jxgbox1" class="jxgbox" style=" position:absolute; top:930px; left:500px; width:500px; height:500px;"></div>
-		
-		<div id="uno" > <p> 
-		<ul> 
-			<li> a) ¿Cuánto vario el precio del primero al tercer mes? Cambia de a  ,es decir     </li> 
-			<li> b) ¿Cuánto vario el precio del primer al cuarto mes? </li> 
-			<li> c) Suponiendo que el incremento fue el mismo cada mes ¿cuánto vario el
-			el precio del tercero al sexto mes? </li> 
-			<li> d) ¿Cuál es el incremento mensual del precio del artículo? </li> 
-			<li> e) Si el primer mes corresponde a enero ¿cuál es el precio del artículo en 
-			marzo? </li> 
-			<li> f) Si el primer mes corresponde a enero ¿cuál es el precio del artículo en diciembre? </li> 
-			<li> g) Respecto al inciso a, encuentren el cociente del incremento en el precio entre el número
-			de meses, es decir la "razón de cambio". Encuentra la razón de cambio en los incisos b y c y 
-			compárenla con la del inciso a. ¿Cómo son?     </li> 
-			<li> h) ¿Qué relación tiene las razones de cambio que encontraste en el inciso g y la respuesta
-			del inciso d? </li> 
-		</ul></p> </div>
-		
-		<div id="uno" > <p> <h1>En conclusión, para cualesquiera dos
-		puntos en la gráfica (recta) la razón de cambio es la misma, es decir, es 
-		CONSTANTE. Esto significa que existe PROPORCIONALIDAD. </h1> </p> </div>
-		
-		
-		<script type="text/javascript" src="pagina1.js"></script>
-		
-        </article>
-        
+			<script type="text/javascript" src="pagina1.js"></script>
+		</section>
+		</div>
+       
+       <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Website maintained by <a>Abraham Adberstein</a></p>
+      
+      </footer>
+    </div>
+ 
 		
         
     </body>  

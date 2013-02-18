@@ -126,7 +126,7 @@ a {
 }
 
 #main_content a:hover {
-  color: #0069ba;
+  
   text-shadow: #0090ff 0px 0px 2px;
 }
 
@@ -289,6 +289,11 @@ Full-Width Styles
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+#forkme_banner:hover {
+	background: #6606FF;
+	color:#FFFFFF;
 }
 
 #header_wrap {
