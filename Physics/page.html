@@ -7,9 +7,11 @@
     	<meta name="description" content="Study " />
 		<link rel="stylesheet" href="stylesheets/stylesheet.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="javascripts/MyPhysicsEngine/PhysicsEngine.css">
+		
 		<script src='javascripts/cannon.js' type='text/javascript'></script>
+		<script src='javascripts/jsxgraphcore.js' type='text/javascript'></script>
 		<!--<script src='javascripts/lib'   type='text/javascript'></script>-->
-		<title>Trial 1</title>
+		<title>Free Fall</title>
 	</head>
 		
 	
@@ -17,7 +19,7 @@
         <div id="header_wrap" class="outer">
         	<header class="inner">
 				<h2 id="project_tagline">Interactive Physics</h2>
-				<h1 id="project_title">In development / Objects</h1>
+				<h1 id="project_title">Free Fall</h1>
 				<h1> </h1>
 			</header>
           </div>
@@ -25,17 +27,20 @@
           <div id="main_content_wrap" class="outer">
           
     <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
-
+	<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Physics/index.html">Physics</a>
           
       <section id="main_content" class="inner">
    
          
-         <canvas id="pbox" class="pbox" "></canvas>
-			<div id="info" class="pbox" style="
-				position:absolute; left:630px; top:5px; width:200px; height:300px;" ></div>
-			<div id="slider" class="pbox" style="
-				position:absolute; left:630px; top:313px; width:200px; height:300px;" ></div>
-			<canvas id="pbox2" class="pbox" "></canvas>
+         <canvas id="pbox" class="pbox" ></canvas>
+			<div id="info" class="inf" style=" position:absolute; left:620px; top:30px; width:200px; height:300px;" ></div>
+			<div id="slider" class="putil" style="">
+				<button id='graphButton' onclick="clearGraph()">Clear graph</button>
+				
+			</div>
+				
+			<!--graph info-->	
+			<div id="jxgbox" class="pbox"  style="width:600px; height:300px;"></div>
 			
 		  <script src="javascripts/MyPhysicsEngine/PhysicsEngine.js"></script>
 		  

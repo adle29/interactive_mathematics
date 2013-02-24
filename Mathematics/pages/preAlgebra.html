@@ -7,13 +7,14 @@
 		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
 		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
 		 <script type="text/javascript" src="jsxgraphcore.js"></script>
-		 
+		 <script type="text/javascript" src="http://www.suluclac.com/lib/ASCIIMathML.js"></script>
+		 <script type="text/javascript" src="http://www.suluclac.com/MathJax/MathJax.js?config=default"></script>
 
 		 <title>Operations</title>
 	</head>
 	
 	
-	<body onload="pag1()" >
+	<body onload="start()" >
 		
            <!-- HEADER -->
             <div id="header_wrap" class="outer">
@@ -31,6 +32,30 @@
             
             <!-- MAIN CONTENT -->
              <section id="main_content" class="inner">
+             	<h5> In this section, you will find the Laws of signs, examples, and also
+             	an interactive quiz. Enjoy!</h4>
+             	
+             	<div class='jxgbox' style='width:600px; height:300px;'> 
+             		<input type="button" class="but" value='New Problem' onclick="news();" />
+             		<input type="button" class="but" value='Solution' onclick="solution();" />
+             		<p></p>
+             		<br></br>
+             		
+             		<div type="text" id='ques' class='text' style=' width:300px; height:50px;'" ></div>
+             		<div> <p style='margin:10px;'>Enter your answer. </p></div>
+             		
+             		<input id='ans' type="text"  class='text'  style='float:left;'/>
+             		
+             		<input type="button" class="but" value='Enter' onclick="check();" />
+             		
+             		<input type="button" class="but" value='Erase' onclick="erase();" />
+             		
+             		
+             	</div> 
+             	
+             	<script type="text/javascript" src="preAlgebra.js"></script>        	
+             	
+             	<p></p>
              	<h4> Absolute Value</h4>
              	
 				 <p> Absolute value is the distance (always positive) between a number and a zero on the number
@@ -38,9 +63,9 @@
 				
 				<ul>
 				Ex: 
-					<li>|3| = 3</li> 
-					<li>|-3| = 3</li>
-					<li>|-5| = 5</li>
+					<li>$|3| = 3$</li> 
+					<li>$|-3| = 3$</li>
+					<li>$|-5| = 5$</li>
 				<ul>
 				</p>
 				
@@ -55,9 +80,9 @@
 				 	
 				 	<ul> 
 				 		Ex: 
-				 		<li> 4 + (-9) = -5 </li>
-				 		<li> (-32)+(-2)=-34</li>
-				 		<li> (-12)+14=2</li>
+				 		<li> $4 + (-9) = -5$ </li>
+				 		<li> $(-32)+(-2)=-34$</li>
+				 		<li> $(-12)+14=2$</li>
 				 	</ul>
 				</p> 
 				
@@ -70,9 +95,9 @@
 				 		of addition as stated above. </p>
 				 		
 				 		Ex: 
-				 		<li> 8-(-3)=8+(+3)=11 </li>
-				 		<li> (-32)+(-2)=-34</li>
-				 		<li> (-15)-(9)=(-15)+(-9)=-24</li>
+				 		<li> $8-(-3)=8+(+3)=11$ </li>
+				 		<li> $(-32)+(-2)=-34$</li>
+				 		<li> $(-15)-(9)=(-15)+(-9)=-24$</li>
 				</ul>	
 				</p>
 				
@@ -85,9 +110,9 @@
 					negative. </p>
 					
 					Ex: 
-					<li> (-4)(5)=-20</li>
-					<li> (-3)(-2)=6</li>
-					<li> (7)(-10)=-70</li>
+					<li> $(-4)(5)=-20$</li>
+					<li> $(-3)(-2)=6$</li>
+					<li> $(7)(-10)=-70$</li>
 				</ul>	
 				</p>
 				
@@ -100,9 +125,9 @@
 					negative. </p>
 					
 					Ex: 
-					<li> (-30)/(5)=-6</li>
-					<li> (-22)/(-2)=11</li>
-					<li> (70)/(-10)=-7</li>
+					<li> $(-30)/(5)=-6$</li>
+					<li> $(-22)/(-2)=11$</li>
+					<li> $(70)/(-10)=-7$</li>
 				</ul>	
 				</p>
 					

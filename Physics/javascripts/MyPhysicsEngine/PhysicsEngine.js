@@ -3,16 +3,35 @@
 var canvas = document.getElementById('pbox');
 var context = canvas.getContext('2d');
 
-var canvas2 = document.getElementById('pbox2');
-var context2 = canvas2.getContext('2d');
+var board = JXG.JSXGraph.initBoard('jxgbox',{boundingbox:[-1,11,20,-1],axis:true});
  
 var mouseX = 0;
 var mouseY = 0;
 var distanceMouseBall;
+var d = new Date();
 var balls = [];
 var mouseDown=0;
 var time=0;
+setInterval(function(){time++;}, 100);
 animate();
+var happen = false;
+
+//physics
+var Cd = 0.47; // Dimensionless
+var rho = 1.22; // kg / m^3
+var A = Math.PI * ball.radius * ball.radius / (10000);
+var ag = 9.81;
+var frameRate = 1/40; // Seconds
+var frameDelay = frameRate * 1000; // ms
+
+	var vi = 0;
+	var vf = 0;
+	var EPI = 0;
+	var EPF = 0;
+	var EKI = 0;
+	var EKF = 0;
+
+
 
 //////////////////////FUNCTION///////////////////////
 
@@ -58,13 +77,12 @@ function ball(x,y,radius,color){
 		x:x,
 		y:y,
 		velocity:{x:0, y:0},
-		mass:0.62,
+		mass:0.1,
 		radius:10,
 		e:{potential:0}
 	}
 	
 	balls.push(ball);
-	console.log(balls);
 }
 
 function square(){
@@ -109,8 +127,8 @@ function animate () {
 	  physics();
 	  draw();
 	  info();
-	  
 	  drawGraph ();
+	  
 	})();
 	event ();
 }
@@ -119,33 +137,37 @@ function draw () {
 	for (var i = 0; i< balls.length; i++){
 		var ball = balls[i];
 		context.beginPath();
-		
-
 		context.arc(ball.x,ball.y,ball.radius,0,2*Math.PI);
-		
-		
 		context.fill();
 	}
 }
 
 function physics () {
-	var gravity = 0.01;
-	var friction = 0.99;
+	var gravity = 9.8;
+	var friction = -0.7;
 	
 	for (var i = 0; i< balls.length; i++){
 		var ball = balls[i];
+		var Fx = -0.5 * Cd * A * rho * ball.velocity.x * ball.velocity.x * ball.velocity.x / Math.abs(ball.velocity.x);
+		var Fy = -0.5 * Cd * A * rho * ball.velocity.y * ball.velocity.y * ball.velocity.y / Math.abs(ball.velocity.y);
+		
+		Fx = (isNaN(Fx) ? 0 : Fx);
+		Fy = (isNaN(Fy) ? 0 : Fy);
+		
+		var ax = Fx / ball.mass;
+		var ay = ag + (Fy / ball.mass);
+	
 		
 		//gravity
-		ball.velocity.y+= gravity;
-		
-		//friction
-		ball.velocity.x *= friction;
-    	ball.velocity.y *= friction;
+		ball.velocity.x += ax*frameRate;
+		ball.velocity.y += ay*frameRate;
     	
-    	ball.y+= ball.velocity.y;
+    	ball.y+= ball.velocity.y*frameRate*100;
 		
 		if (ball.y > canvas.height-20){
-			ball.y = canvas.height - 20;
+			ball.velocity.y *= friction;
+			ball.y =canvas.height-20;
+
 			ball.velocity.y = -Math.abs(ball.velocity.y);
 		}
 		
@@ -156,10 +178,10 @@ function physics () {
 function event () {
 	canvas.addEventListener('click', function(e) {
 		mouseDown = true;
-        mouseX = e.x;
-        mouseY= e.y;
-        
-        
+        mouseX = e.x-230;
+        mouseY= e.y-70;
+        time=0;	
+         
         //distance
         for(i = 0; i < balls.length; i++){
         	var ball = balls[i];
@@ -169,7 +191,7 @@ function event () {
 		}
         
     });
-    	
+   	
 
 }
 
@@ -177,15 +199,39 @@ function event () {
 
 function info (){
 	var infoBox = document.getElementById('info');
+
 	
 	for (var i = 0; i< balls.length; i++){
 		var ball = balls[i];
-		var pos = Math.floor((ball.y)/100); 
-		var Ep = Math.floor(pos*9.8*0.62); 
-		var Ek = Math.floor(0.5*0.62*ball.velocity.y*ball.velocity.y); 
-		infoBox.innerHTML = "<p> Velocity:"+Math.floor(ball.velocity.y)+"</p> <p> Potential Energy: "+Ep+"</p>  <p> Position: "+pos+"</p> <p> Kinetic: "+Ek+"</p>";
-		//infoBox.innerHTML = "<p> Postion:</p>";
-	}
+		var pos = Math.floor(9-(ball.y)/33.33); 
+		
+		
+		
+		var Ep = Math.floor(pos*9.8*ball.mass); 
+		
+		var Ek = Math.floor(0.5*ball.mass*ball.velocity.y*ball.velocity.y);
+		
+		if(time == 0){
+			vi = Math.floor(ball.velocity.y);
+			EPI = Ep;
+			EKI = Ek
+		}
+		if (Math.floor(ball.y) == canvas.height-25 && happen == false){
+			vf = Math.floor(ball.velocity.y);
+			EPF = Ep;
+			EKF = 0.5*ball.mass*ball.velocity.y*ball.velocity.y;
+			console.log('hap'+EKF);
+			happen = true;
+		} 
+		infoBox.innerHTML = "<p> Time: "+time+" s</p>"+
+							"<p> Position: "+pos+" m</p>"+
+							"<p> vi: "+vi+" m/s</p>"+
+							"<p> vf: "+vf+" m/s</p>"+
+							"<p> EPI: "+EPI+" J</p>"+
+							"<p> EKI: "+EKI+" J<p> "+
+							"<p> EPF: "+EPF+" J</p>"+
+							"<p> EKF: "+EKF+" J</p>";
+		}
 	
 	
 	
@@ -228,14 +274,22 @@ function drawGraph () {
 
 	for (var i = 0; i< balls.length; i++){
 		var ball = balls[i];	
-		var pos = Math.floor((ball.y)); 
-		var Ep = Math.floor(pos*.1*0.62); 
-		context2.beginPath();
-		context2.arc(pos,Ep,2,0,2*Math.PI);
-		context2.fill();
+		var pos = Math.abs(Math.floor(9-(ball.y)/29));
+		var vel = Math.floor(ball.velocity.y); 
+		if (ball.y != 280 && ball.velocity.y != 0){
+		board.create('point',[function(){return time},function(){return pos}], {name:'',size:1});
+		
+		}
+		if (time <10){
+		//	console.log(pos+ '---' + time);
+		}
 	}
 	
 }
 
+function clearGraph () {
+	board = JXG.JSXGraph.freeBoard(board);
+	board = JXG.JSXGraph.initBoard('jxgbox',{boundingbox:[-1,11,20,-1],axis:true});	
+}
 
 
