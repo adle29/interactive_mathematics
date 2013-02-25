@@ -7,13 +7,25 @@
 		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
 		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
 		 <script type="text/javascript" src="jsxgraphcore.js"></script>
-<script type="text/javascript" src="http://www.suluclac.com/lib/ASCIIMathML.js"></script>
-<script type="text/javascript" src="http://www.suluclac.com/MathJax/MathJax.js?config=default"></script>
+		 
+		 <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+		<!-- <script type="text/javascript" src="jspdf.js"></script>
+		<script type="text/javascript" src="libs/FileSaver.js/FileSaver.js"></script>
+		 <script type="text/javascript" src="libs/BlobBuilder.js/BlobBuilder.js"></script>
+		 <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+		 <script type="text/javascript" src="jspdf.plugin.ie_below_9_shim.js"></script>
+		 <script type="text/javascript" src="jspdf.plugin.sillysvgrenderer.js"></script>
+		 <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+		 <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>-->
+		 
+		 <script type="text/javascript" src="http://www.suluclac.com/lib/ASCIIMathML.js"></script>
+		 <script type="text/javascript" src="http://www.suluclac.com/MathJax/MathJax.js?config=default"></script>
 		 <title>Exponents/Powers</title>
 	</head>
 	
 	
-	<body  >
+	<body onload='start()' >
 		
            <!-- HEADER -->
             <div id="header_wrap" class="outer">
@@ -31,12 +43,39 @@
             
             <!-- MAIN CONTENT -->
              <section id="main_content" class="inner">
+             <h5> In this section, you will find the Laws of Exponents, examples, and also
+             	an interactive quiz. Enjoy!</h4>
+             	
+             	
+             	
+             	<div class='jxgbox' style='width:600px; height:300px;'> 
+             		<input type="button" class="but" value='New Problem' onclick="news();" />
+             		<input type="button" class="but" value='Solution' onclick="solution();" />
+             		<p></p>
+             		<br></br>
+             		
+             		<p type="text" id='ques' class='text' style=' width:300px; height:100px;'" ></p>
+             		<div> <p style='margin:10px;'>Enter your answer. </p></div>
+             		
+             		<input id='ans' type="text"  class='text'  style='float:left;'/>
+             		
+             		<input type="button" class="but" value='Enter' onclick="check();" />
+             		
+             		<input type="button" class="but" value='Erase' onclick="erase();" />
+             		
+             		
+             	</div> 
+             	<p>If you need to practice more, here is a randomly generated worksheet.</p>
+             	<a class='but' href='worksheet.html'>Worksheet</a>
+
+             	<br></br><br></br>
+             	<script type="text/javascript" src="Exponents.js"></script> 
              	
 				<h5> Definition:</h5>
 				<p> $a^n$= $a*a*a*a$..., that is, the number written in the upper right-hand corner
 				is called the exponent or power, and it tells how many times the other number
 				(called the base) is multiplied times itself. If an exponent cannot be seen, it
-				equal 1.<p> Ex: $5^6 = 5*5*5*5*5*5=15,626$. </p>
+				equal 1.<p> Ex: $5^6 = 5*5*5*5*5*5=15,625$. </p>
 				<ul> 
 					<p>Rule: $a^n * a^m = a^{m+n}$ ; that is, when multiplying the same base, the
 					new exponent can be found by adding the exponents of the bases

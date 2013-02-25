@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Worksheet</title>
+    <meta charset="utf-8" />
+    <style>
+		table
+		{
+			border-collapse:collapse;
+		}
+		table, td, th
+		{
+			border:1px solid black;
+		}
+		
+		p{
+			margin: 30px;
+		}
+		
+		h3{
+			margin: 30px;
+  			font-weight: 700;
+  			font-size: 36px;
+  			font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  			letter-spacing: -1px;
+		}
+		
+	</style>	
+	<script type="text/javascript" src="mathJax/unpacked/MathJax.js">
+		  MathJax.Hub.Config({
+		  config: ["MMLorHTML.js"],
+		  extensions: ["tex2jax.js", "TeX/noErrors.js"], 
+		  jax: ["input/TeX"],
+		  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+		  displayMath: [['$$','$$']],
+		  processEscapes: true, previewTeX: false},
+		  "HTML-CSS": {availableFonts:["TeX"]},
+		  MMLorHTML: {prefer: "MML"}
+		  });		
+	</script>
+	
+	<script src='worksheet.js'></script>
+    
+  </head>
+
+  <body onload='work()'>
+  	<h3>EXPONENT LAW PRACTICE</h3>
+  	<p>Write each expression in the form $x^p$.</p>
+	<div id='sheet'> </div>	
+
+  </body>
+		
+</html>

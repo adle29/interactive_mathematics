@@ -343,6 +343,12 @@ Full-Width Styles
 	color: #E6E6E6;
 }
 
+
+.invisible {
+    display: none;
+    visibility: hidden;
+}
+
 .but {
   margin:10px;
   display: block;
@@ -458,7 +464,6 @@ Full-Width Styles
 #footer_wrap {
   background: #212121;
 }
-
 
 
 /*******************************************************************************
