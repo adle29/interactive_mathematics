@@ -28,9 +28,9 @@ function start(){
 	var signs = ['','-'];
 	var firstTerm = Math.floor( Math.random() * (21 - 1) + 1);
 	var secTerm = Math.floor( Math.random() * (21 - 1) + 1);
-	var sign1=signs[Math.floor(Math.random ()*2)];
-	var sign2=sign[Math.floor(Math.random ()*2)];
-	var sign3=signs[Math.floor(Math.random ()*2)];
+	var sign1 = signs[Math.floor(Math.random ()*2)];
+	var sign2 = Math.floor(Math.random ()*2);
+	var sign3 = signs[Math.floor(Math.random ()*2)];
 	var letter = abec[Math.floor(Math.random ()*6)];
 	
 	var ques1 = parseInt(sign1+firstTerm);
@@ -38,13 +38,18 @@ function start(){
 	
 	if (sign2 == 0){
 		question = ques1 - ques2 +letter;
+		//console.log(sign2);
+		console.log(ques1 +'-'+ques2+'='+question) ;
+		sign2='-';
 	}
 	else {
 		question = ques1 + ques2+letter;
+		sign2='+';
+		//console.log(Math.floor(Math.random ()*2));
 	}
 	textQuestion = '('+sign1+firstTerm+ letter +') ' + sign2 + ' ('+sign3+ secTerm+ letter+')';
 	div.innerHTML = '<p style="margin:10px;">'+textQuestion+'=</p>';
-	console.log(question);
+	
 }
 
 function solution(){
