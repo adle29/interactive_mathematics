@@ -10,32 +10,12 @@
 		 
 		 <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
 		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
-		<!-- <script type="text/javascript" src="jspdf.js"></script>
-		<script type="text/javascript" src="libs/FileSaver.js/FileSaver.js"></script>
-		 <script type="text/javascript" src="libs/BlobBuilder.js/BlobBuilder.js"></script>
-		 <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
-		 <script type="text/javascript" src="jspdf.plugin.ie_below_9_shim.js"></script>
-		 <script type="text/javascript" src="jspdf.plugin.sillysvgrenderer.js"></script>
-		 <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
-		 <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
-		 
+
 		 <script type="text/javascript" src="http://www.suluclac.com/lib/ASCIIMathML.js"></script>
-		 <script type="text/javascript" src="http://www.suluclac.com/MathJax/MathJax.js?config=default"></script>-->
-		 <script type="text/javascript" src="mathjax/MathJax.js">
-			  MathJax.Hub.Config({
-			  config: ["MMLorHTML.js"],
-			  extensions: ["tex2jax.js", "TeX/noErrors.js"], 
-			  jax: ["input/TeX"],
-			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
-			  displayMath: [['$$','$$']],
-			  processEscapes: true, previewTeX: false},
-			  "HTML-CSS": {availableFonts:["TeX"]},
-			  MMLorHTML: {prefer: "MML"}
-			  });
-		</script>
+		 <script type="text/javascript" src="http://www.suluclac.com/MathJax/MathJax.js?config=default"></script>
+		
 
-
-		 <title>Exponents/Powers</title>
+		 <title>Linear Equations</title>
 	</head>
 	
 	
@@ -45,7 +25,7 @@
             <div id="header_wrap" class="outer">
 				<header class="inner">
 					<h2 id="project_tagline">Interactive Mathematics</h2>
-					<h1 id="project_title">Exponents/Powers</h1>
+					<h1 id="project_title">Linear Equations</h1>
 				</header>
            </div>
             
@@ -107,7 +87,7 @@
 					<li> $(7^5)/(7^2)=7^3$</li>
 					<li> $(3^4)/(3^6)=3^(-2)=1/(3^2)$</li>
 					
-					<p>Rule: $a^{-n}=1/a^n$; that is, a negative exponent can be changed to a
+					<p>Rule: $a^(-n)=1/a^n$; that is, a negative exponent can be changed to a
 					positive exponent by moving the base to the other section of the fraction;
 					numerator goes to denominator or denominator goes to numerator.  </p>
 					
