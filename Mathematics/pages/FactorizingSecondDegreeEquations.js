@@ -1,78 +1,121 @@
-var textExample; 
-var textExample2; 
-var textExample3; 
-var textExample4;
-var h,k; 
-var k = 0; 
-var show; 
-var num, num2;
+var h, k, c=0, completeEcuation, completeSolvedEcuation;
+var textExample,textExample2,textExample3,textExample4,textExample5; 
+var left,right; 
+var sign1,sign2; 
+var stop =false; 
+
 
 function start(){
-	operation ();
-	k=0
+	var div = document.getElementById("explanationBox");
+	div.innerHTML = '';
+	textExample='',textExample2='',textExample3='',textExample4='',textExample5='';
+	c=0,h=0,k=0; 
+	stop = false; 
+	trinomial();
+	foil();
+	operation();
+	work();
+	
 }
 
 function work(){
-	k++;
 	
 	var div = document.getElementById("explanationBox");
-	if (k == 1){show = textExample2; factor(num,num2);}
-	if (k == 2){show = textExample3;}
-	if (k == 3){show = textExample4; }
-	div.innerHTML += '<p style="margin:10px;">$'+show+'$</p>';
-	MathJax.Hub.Typeset('explanationBox'); // process math
+	switch (c){
+		case 0:
+			show = textExample;
+			break;
+		case 1: 
+			show = textExample2;
+			break;
+		case 2:
+			show = textExample3;
+			break;
+		case 3:
+			show = textExample4;
+			break;
+		case 4: 
+			show = textExample5;
+			break;
+		default: 
+			stop = true; 
+			break;
+	}
+	if (stop == false) {
+		div.innerHTML += '<p style="margin:10px;">$'+show+'$</p>';
+		MathJax.Hub.Typeset('explanationBox'); // process math
+	}
+	if (c==6){c=0}
+	c++;
 }
 
 function operation() { 
-	num = rand(1,6);
-	num2 = rand(4,10);
-	textExample = 'x^2  +' + num + 'x + ' + num2 + '= 0'; 
-	var div = document.getElementById("explanationBox");
-	div.innerHTML = '<p style="margin:10px;">${'+textExample+'}$</p>';
-	MathJax.Hub.Typeset('explanationBox'); // process math
-	
-	textExample2 = 'x^2  +' + num + 'x + ' + num2 + '= (x + ?)(x + ?)'; 
-	textExample3 = 'x^2  +' + num + 'x + ' + num2 + '= (x + h)(x + k)'; 
-	textExample3 = 'x^2  +' + num + 'x + ' + num2 + '= (x + '+h+')(x + '+k+')';
-	
+	textExample = completeEcuation + '= 0'; 
+	textExample2 = completeEcuation + '= (x + ?)(x + ?)'; 
+	textExample3 = completeEcuation + '= (x + h)(x + k)'; 
+	textExample4 = completeEcuation + '= (x  '+h+')(x  '+k+')';
+	textExample5 = completeSolvedEcuation + '= 0'; 
 }
 
-function factor (num,num2) {
-	var factors = [1];
-	var primeFactors = [2,3,4,5,7,8,9,10,11,13];
-	var simplifiedNumber = num2; 
-	var i = 0;
-	var count = 1;
-	while (simplifiedNumber != 1){
-		if (simplifiedNumber % primeFactors[i] == 0 && i <6){
-			simplifiedNumber = simplifiedNumber/primeFactors[i];
-			factors[count] = primeFactors[i];
-			i=-1;
-			count++;
-		}
-		i++;
-	}
-	//look for h and k
-	console.log(factors);
-	for (var j = 0; j < factors.length; j++){
-		for (var w = j+1; w < factors.length; w++){
-		 	if (factors[j]+factors[w] == num){
-		 		h = factors[j];
-		 		k = factors[w];
-		 		
-		 	}
-		 	var igual = factors[j] +factors[w];
-		 	console.log(factors[j]+' +' +factors[w]+' =' + igual);
-		}
-	}
-	
-	 
-}
 
+//the math
 
 function rand(a,b) {
 	var c = Math.floor((b+1-a)*Math.random() + a); 
 	return c;
 }
+    
+function isNeg(i){
+	var str = i.toString();
+	var option; 
+	if ('-' == str.charAt(0)){option=true;}
+	else{option=false;}
+	return ;
+}
 
+function trinomial(){
+	left = rand(1,15);
+	right = rand(1,15);;
+	if(Math.floor(Math.random()*1)){
+		sign1 = "+";
+	}
+	else{
+		sign1 = "-";
+	}
+	if(Math.floor(Math.random()*1)){
+		sign2 = "+";
+	}
+	else{
+		sign2 = "-";
+	}
+	completeSolvedEcuation = "(x "+sign1+" "+left+")" +""+ "(x "+sign2+" "+right+")";
+	h = sign1+left;
+	k = sign2+right; 
+	
+}
+    
+function foil(){
+	left = Number(sign1+left);
+	right = Number(sign2 + right);
+	
+	var signLeft = (left + right) +"x",
+		signRight = left * right;
+	 if(Number(left + right) === 0){
+		 signLeft = "";
+	 }  
+	else if(isNeg(left+right) == false){
+		var numen = left + right;
+		signLeft = "+"+numen;
+		
+	}
+	if(!isNeg(left*right)){
+		signRight = "+"+left*right;
+	}
+	
+	completeEcuation =  "x^2"+signLeft+signRight;
+	
+}
+    
+    
+    
 
