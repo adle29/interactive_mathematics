@@ -3,6 +3,7 @@ var textExample,textExample2,textExample3,textExample4,textExample5;
 var left,right; 
 var sign1,sign2; 
 var stop =false; 
+var option; 
 
 
 function start(){
@@ -67,22 +68,21 @@ function rand(a,b) {
     
 function isNeg(i){
 	var str = i.toString();
-	var option; 
 	if ('-' == str.charAt(0)){option=true;}
 	else{option=false;}
-	return ;
+	return option;
 }
 
 function trinomial(){
 	left = rand(1,15);
 	right = rand(1,15);;
-	if(Math.floor(Math.random()*1)){
+	if(0 == Math.floor(Math.random()*2)){
 		sign1 = "+";
 	}
 	else{
 		sign1 = "-";
 	}
-	if(Math.floor(Math.random()*1)){
+	if(0 == Math.floor(Math.random()*1)){
 		sign2 = "+";
 	}
 	else{
