@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+    <meta charset="UTF-8" />
+
+	<head>
+		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
+		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
+		 <script type="text/javascript" src="jsxgraphcore.js"></script>
+		 
+		 <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+		 <script type="text/javascript" src="mathjax/MathJax.js">
+			  MathJax.Hub.Config({
+			  config: ["MMLorHTML.js"],
+			  extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js"],
+			  menuSettings:{ zoom:"Hover"},
+			  jax: ["input/TeX"],
+			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+			  displayMath: [['$$','$$']],
+			  processEscapes: true, previewTeX: false},
+			  "HTML-CSS": {availableFonts:["TeX"]},
+			  MMLorHTML: {prefer: "MML"}
+			  });
+			  
+			  
+		</script>
+
+
+		 <title>Inequalities</title>
+	</head>
+	
+	
+	<body onload='' >
+		
+           <!-- HEADER -->
+            <div id="header_wrap" class="outer">
+				<header class="inner">
+					<h2 id="project_tagline">Interactive Mathematics</h2>
+					<h1 id="project_title">Inequalities</h1>
+				</header>
+           </div>
+            
+            <div id="main_content_wrap" class="outer">
+            <ul>
+            <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
+			<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Mathematics</a>
+            </ul>
+            
+            <!-- MAIN CONTENT -->
+             <section id="main_content" class="inner">
+             <h5> In this section, you will find how to simplify and graph inequalities. Enjoy!</h4>
+             <p> Solving an inequality means finding all of tis solutions. Inequalities are very similar
+             to equation, but they some different rules. </p>	
+             <p>Rule 1: Inequalities do not use the symbol "$=$", they can use the following: </p>
+             	<ul >
+             		
+             		<li> $\eqslantless$ &nbsp;&nbsp;   lesser than or equal to </li>
+             		<li> $\eqslantgtr$ &nbsp; &nbsp; greater than or equal to</li>
+             		<li>$>$ &nbsp; &nbsp; greater than</li>
+             		<li>$<$ &nbsp; &nbsp; lesser than</li>
+             		
+             		 		 
+             	</ul> 
+             <p>Rule 2: You can do anything you want to do with the inequality as you do in an equation, but
+             when you divide or multiply the inequality by a negative number you must switch the direction of 
+             the symbol of the equality.  </p>
+             
+             <p>Example:</p>
+             
+             <ul>
+             	
+             		<li class="equation">(1)&nbsp; &nbsp;  $-10x \eqslantless 20 $</li>
+             	
+             		<li class="equation">(2)&nbsp; &nbsp;  $\frac{-10x} {-10} \eqslantgtr \frac {20} {-10} $</li>
+             		<li class="equation">(3)&nbsp; &nbsp;  $ x \eqslantgtr -20 $</li>
+             		 		 
+             </ul> 
+             
+             <p>When graphing inequalities, it is needed to know the range of numbers that will satisfy the 
+             the inequality. There can be inequalities with many variables, but for these examples we will use
+             one or two variables.   </p>
+             
+             <div id="jxgbox" class="jxgbox" style="width:500px; height:400px;"></div>
+             
+             
+             <script type="text/javascript" src="Inequalities.js"></script> 
+					
+						
+				
+			</section>
+		</div>
+       
+       <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Website maintained by <a>Abraham Adberstein</a></p>
+      
+      </footer>
+    </div>
+ 
+		
+        
+    </body>  
+</html> 

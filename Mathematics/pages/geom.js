@@ -1,9 +1,10 @@
-var board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:250, unitX:10, unitY:10, axis:true});
+var board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:230, unitX:10, unitY:10, axis:true});
 var letters =['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z'];
 var colors = ['#FF0000', '#00FF00','#0000FF','#FFFF00','#00FFFF','#FF00FF','9966FF','FF33FF'];
 var pointNum = 0;
 var pointName = letters[0];
 var color = 0;
+var time; 
 
 //value input
 function commands() {
@@ -45,24 +46,27 @@ function createPoint () {
 }
 
 function createLine () {
-	var name=prompt("Please enter the points the line will intersect separated by a space."," ");
+	var name=prompt("Please enter the points the line will intersect."," ");
+	name = name.toUpperCase();
 	name = name.trim();
-	var n = name.split(" ");
+	name = name.replace(" ","");
+	var n = name.split("");
 	console.log(n);
 	var li = board.create('line',n, {strokeColor:'#00ff00',strokeWidth:2});	
 }
 
 function createPolygon () {
 	var name=prompt("Please enter the points to form the polygon."," ");
-	name = name.trim();
-	var n = name.split(" ")
+	name = name.toUpperCase().trim().replace(" ","");
+	var n = name.split("")
 	var poly = board.create('polygon',n);
 }
 	
 function createCircle () {
-	var p1 = board.createElement('point',[0,0], {name:'P1',size: 4, face: 'o'});
-	var p2 = board.createElement('point',[10,10], {name:'P2',size: 4, face: 'o'});
-	var ci = board.createElement('circle',["P1","P2"], {strokeColor:'#00ff00',strokeWidth:2});
+	var p1 = board.create('point',[0,0], {name:'Y',size: 4, face: 'o'});
+	var p2 = board.create('point',[10,10], {name:'Z',size: 4, face: 'o'});
+	var ci = board.createElement('circle',["Y","Z"], {strokeColor:'#00ff00',strokeWidth:2});
+	pointNum+= 2;
 }	
 	
 function createSlider () {
@@ -92,12 +96,13 @@ function text () {
 }
 
 function drawFunction () {	
+
 	var actualColor = colors[color];
 	eval("function f(x) { return "+ document.getElementById("graphing").value+";}");
 	var graph = board.createElement('functiongraph', [function(x){ return f(x); }], {strokeColor:actualColor, strokeWidth:3.0});
 	var element = document.getElementById("imprime");
-	//element.innerHTML +=  document.getElementById("graphing").value+ "\n";
 	color++;
-	
+	if (color >7){color=0;}
 }
+
 

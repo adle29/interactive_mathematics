@@ -1,9 +1,10 @@
+var board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:230, unitX:10, unitY:10, axis:true});
 var h, k, c=0, completeEcuation, completeSolvedEcuation;
 var textExample,textExample2,textExample3,textExample4,textExample5; 
 var left,right; 
 var sign1,sign2; 
 var stop =false; 
-var option; 
+var option,graphEquation; 
 
 
 function start(){
@@ -16,7 +17,7 @@ function start(){
 	foil();
 	operation();
 	work();
-	
+	graph();
 }
 
 function work(){
@@ -37,6 +38,8 @@ function work(){
 			break;
 		case 4: 
 			show = textExample5;
+			var p1 = board.create('point',[h*(-1),0], {name:'x1',size: 2, face: 'o'});
+			var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
 			break;
 		default: 
 			stop = true; 
@@ -68,6 +71,7 @@ function rand(a,b) {
     
 function isNeg(i){
 	var str = i.toString();
+	var option;
 	if ('-' == str.charAt(0)){option=true;}
 	else{option=false;}
 	return option;
@@ -97,11 +101,12 @@ function trinomial(){
 function foil(){
 	left = Number(sign1+left);
 	right = Number(sign2 + right);
+
 	
-	var signLeft = (left + right) +"x",
+	var signLeft = (left + right),
 		signRight = left * right;
 	 if(Number(left + right) === 0){
-		 signLeft = "";
+		 signLeft = "+";
 	 }  
 	else if(isNeg(left+right) == false){
 		var numen = left + right;
@@ -112,10 +117,17 @@ function foil(){
 		signRight = "+"+left*right;
 	}
 	
-	completeEcuation =  "x^2"+signLeft+signRight;
-	
+	completeEcuation =  "x^2"+signLeft+"x"+signRight;
+	graphEquation = 'x*x'+signLeft+"*x"+signRight;
+	console.log(graphEquation);
 }
     
-    
+function graph () {
+	board = JXG.JSXGraph.freeBoard(board);
+	board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:250, unitX:10, unitY:10, axis:true});
+	eval("function f(x) { return "+ graphEquation+";}");
+	board.createElement('functiongraph', [function(x){ return f(x); }], {strokeColor:'lime', strokeWidth:3.0});
+	
+}   
     
 

@@ -9,6 +9,23 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 		<script type="text/javascript" src="jsxgraphcore.js"></script>	
+		<script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+		 <script type="text/javascript" src="mathjax/MathJax.js">
+			  MathJax.Hub.Config({
+			  config: ["MMLorHTML.js"],
+			  extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js"],
+			  menuSettings:{ zoom:"Hover"},
+			  jax: ["input/TeX"],
+			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+			  displayMath: [['$$','$$']],
+			  processEscapes: true, previewTeX: false},
+			  "HTML-CSS": {availableFonts:["TeX"]},
+			  MMLorHTML: {prefer: "MML"}
+			  });
+			  
+			  
+		</script>
 		
 		</head>
 
@@ -47,8 +64,8 @@
 		   <!--<button type="button"  onclick="createSlider ()">Slider </button> -->
 		   <button type="button"  onclick="eraseBoard ()">Erase </button>  
 		   <button type="button"  onclick="text ()">Text </button> 
-		   <input x-webkit-speech type="text"   lang="English" id="graphing"  onkeydown="drawFunction()">
-		<button type="button" value="set" onClick="drawFunction()" >Enter</button>
+		   <input id="graphing" >
+		<button type="button" value="Graph" onClick="drawFunction()" >Enter</button>
        </div>
        
 	 <!--  <textarea id="imprime" readonly="readonly" > </textarea>-->	

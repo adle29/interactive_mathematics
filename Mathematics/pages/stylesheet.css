@@ -465,6 +465,14 @@ Full-Width Styles
   background: #212121;
 }
 
+.equation {
+	list-style-type: none;
+ 	padding: 0;
+	margin-left: 20px;
+	margin-bottom:15px;
+	font-weight:bold;
+}
+
 
 /*******************************************************************************
 Small Device Styles
