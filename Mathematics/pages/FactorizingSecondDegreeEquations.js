@@ -1,6 +1,6 @@
 var board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:230, unitX:10, unitY:10, axis:true});
 var h, k, c=0, completeEcuation, completeSolvedEcuation;
-var textExample,textExample2,textExample3,textExample4,textExample5; 
+var textExample; 
 var left,right; 
 var sign1,sign2; 
 var stop =false; 
@@ -23,42 +23,23 @@ function start(){
 function work(){
 	
 	var div = document.getElementById("explanationBox");
-	switch (c){
-		case 0:
-			show = textExample;
-			break;
-		case 1: 
-			show = textExample2;
-			break;
-		case 2:
-			show = textExample3;
-			break;
-		case 3:
-			show = textExample4;
-			break;
-		case 4: 
-			show = textExample5;
-			var p1 = board.create('point',[h*(-1),0], {name:'x1',size: 2, face: 'o'});
-			var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
-			break;
-		default: 
-			stop = true; 
-			break;
-	}
-	if (stop == false) {
+	show = textExample[c]
+    if(c == 5){
+        var p1 = board.create('point',[h*(-1),0], {name:'x1',size: 2, face: 'o'});
+        var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
+    }
+    c++
+    
 		div.innerHTML += '<p style="margin:10px;">$'+show+'$</p>';
 		MathJax.Hub.Typeset('explanationBox'); // process math
-	}
-	if (c==6){c=0}
-	c++;
+	
 }
 
 function operation() { 
-	textExample = completeEcuation + '= 0'; 
-	textExample2 = completeEcuation + '= (x + ?)(x + ?)'; 
-	textExample3 = completeEcuation + '= (x + h)(x + k)'; 
-	textExample4 = completeEcuation + '= (x  '+h+')(x  '+k+')';
-	textExample5 = completeSolvedEcuation + '= 0'; 
+	  textExample = [completeEcuation + '= 0', completeEcuation + '= (x + ?)(x + ?)',
+	completeEcuation + '= (x + h)(x + k)',
+	 completeEcuation + '= (x  '+h+')(x  '+k+')',
+	 completeSolvedEcuation + '= 0']; 
 }
 
 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    <meta charset="UTF-8" />
+
+	<head>
+		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
+		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
+		 <script type="text/javascript" src="jsxgraphcore.js"></script>	
+		<script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+
+		
+		 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+		 <script type="text/javascript" src="mathjax/MathJax.js">
+			  MathJax.Hub.Config({
+			  config: ["MMLorHTML.js"],
+			  extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js"],
+			  menuSettings:{ zoom:"Hover"},
+			  jax: ["input/TeX"],
+			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+			  displayMath: [['$$','$$']],
+			  processEscapes: true, previewTeX: false},
+			  "HTML-CSS": {availableFonts:["TeX"]},
+			  MMLorHTML: {prefer: "MML"}
+			  });
+			  
+			  
+		</script>
+		 <style>
+		 	#window{
+		 		width:180px;
+		 		height:180px;
+		 		background:rgba(238,245,245,0.5);
+		 		margin-left:15px;
+		 		margin-top:5px;
+		 	}
+		 	
+		 	
+		 </style> 
+
+		 <title>Experiment</title>
+	</head>
+	
+	
+	<body onload='' >
+		<div id="console" style="background:rgba(245,245,245,0.5); width: 210px;" > 
+			<br>
+			<div id="window"></div>
+			<input type="text" style="margin-left:5px; width:130px; height:20px;"/>
+			<input type="button" value="ENTER"/>
+		</div>
+		
+		
+  		
+  		
+  		     <!--grapher-->
+ <div id="grapher" style="width:300px; background:rgba(245,245,245,0.5);">
+   <div id="jxgbox" class="jxgbox" style="width:250px; height:250px; margin-left:15px;"></div>		
+   <button type="button"  onclick="createPoint ()">Points </button> 
+   <button type="button"  onclick="createLine ()">Line </button> 
+   <button type="button"  onclick="createPolygon ()">Polygon </button>
+   <button type="button"  onclick="createCircle ()">Circle </button>
+   <button type="button"  onclick="eraseBoard ()">Erase </button>  
+   <br>
+   <input id="graphing">
+   <button type="button" value="Graph" onClick="drawFunction()" >Enter</button>
+	   
+</div>
+  		
+  		<!--calculator-->
+  	<div id='calculator' style="width:240px;">
+		<FORM NAME="Calc">
+		<TABLE BORDER=4>
+		<TR>
+		<TD>
+		<INPUT TYPE="text"   NAME="Input" Size="16">
+		<br>
+		</TD>
+		</TR>
+		<TR>
+		<TD>
+		<INPUT TYPE="button" NAME="one"   VALUE="  1  " OnClick="Calc.Input.value += '1'">
+		<INPUT TYPE="button" NAME="two"   VALUE="  2  " OnCLick="Calc.Input.value += '2'">
+		<INPUT TYPE="button" NAME="three" VALUE="  3  " OnClick="Calc.Input.value += '3'">
+		<INPUT TYPE="button" NAME="plus"  VALUE="  +  " OnClick="Calc.Input.value += ' + '">
+		<br>
+		<INPUT TYPE="button" NAME="four"  VALUE="  4  " OnClick="Calc.Input.value += '4'">
+		<INPUT TYPE="button" NAME="five"  VALUE="  5  " OnCLick="Calc.Input.value += '5'">
+		<INPUT TYPE="button" NAME="six"   VALUE="  6  " OnClick="Calc.Input.value += '6'">
+		<INPUT TYPE="button" NAME="minus" VALUE="  -  " OnClick="Calc.Input.value += ' - '">
+		<br>
+		<INPUT TYPE="button" NAME="seven" VALUE="  7  " OnClick="Calc.Input.value += '7'">
+		<INPUT TYPE="button" NAME="eight" VALUE="  8  " OnCLick="Calc.Input.value += '8'">
+		<INPUT TYPE="button" NAME="nine"  VALUE="  9  " OnClick="Calc.Input.value += '9'">
+		<INPUT TYPE="button" NAME="times" VALUE="  x  " OnClick="Calc.Input.value += ' * '">
+		<br>
+		<INPUT TYPE="button" NAME="clear" VALUE="  c  " OnClick="Calc.Input.value = ''">
+		<INPUT TYPE="button" NAME="zero"  VALUE="  0  " OnClick="Calc.Input.value += '0'">
+		<INPUT TYPE="button" NAME="DoIt"  VALUE="  =  " OnClick="Calc.Input.value = eval(Calc.Input.value)">
+		<INPUT TYPE="button" NAME="div"   VALUE="  /  " OnClick="Calc.Input.value += ' / '">
+		<br>
+		</TD>
+		</TR>
+		</TABLE>
+		</FORM>
+	</div>
+
+		<script>
+		  $(function() {
+			$( "#console" ).draggable().resizable();
+			$( "#calculator" ).draggable().resizable();
+			$( "#grapher" ).draggable().resizable();
+		  });
+  		</script>
+            		<script type="text/javascript" src="experiment.js"> </script>
+
+
+
+     
+		
+        
+    </body>  
+</html> 
