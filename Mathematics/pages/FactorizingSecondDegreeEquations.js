@@ -29,10 +29,10 @@ function work(){
         var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
     }
     c++
-    
+    if(c<6) {
 		div.innerHTML += '<p style="margin:10px;">$'+show+'$</p>';
 		MathJax.Hub.Typeset('explanationBox'); // process math
-	
+	}
 }
 
 function operation() { 
