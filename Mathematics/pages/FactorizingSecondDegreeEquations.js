@@ -21,14 +21,16 @@ function start(){
 }
 
 function work(){
-	
-	var div = document.getElementById("explanationBox");
-	show = textExample[c]
-    if(c == 5){
-        var p1 = board.create('point',[h*(-1),0], {name:'x1',size: 2, face: 'o'});
-        var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
-    }
-    c++
+	if(c < textExamples.length){
+		var div = document.getElementById("explanationBox");
+		show = textExample[c]
+	    	if(c == 5){
+	        	var p1 = board.create('point',[h*(-1),0], {name:'x1',size: 2, face: 'o'});
+	        	var p2 = board.create('point',[k*(-1),0], {name:'x2',size: 2, face: 'o'});
+	    	}
+	    c++
+	}
+    
     
 		div.innerHTML += '<p style="margin:10px;">$'+show+'$</p>';
 		MathJax.Hub.Typeset('explanationBox'); // process math
@@ -51,11 +53,7 @@ function rand(a,b) {
 }
     
 function isNeg(i){
-	var str = i.toString();
-	var option;
-	if ('-' == str.charAt(0)){option=true;}
-	else{option=false;}
-	return option;
+	return (i < 0);
 }
 
 function trinomial(){
