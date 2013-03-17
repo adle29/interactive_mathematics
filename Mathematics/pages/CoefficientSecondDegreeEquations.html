@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <meta charset="UTF-8" />
+
+	<head>
+		 <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
+		 <link rel="stylesheet" href="stylesheet.css" type="text/css" media="all" />
+		 <script type="text/javascript" src="jsxgraphcore.js"></script>
+		 
+		 <script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+		 <script type="text/javascript" src="mathjax/MathJax.js">
+			  MathJax.Hub.Config({
+			  config: ["MMLorHTML.js"],
+			  extensions: ["tex2jax.js", "TeX/noErrors.js"], 
+			  jax: ["input/TeX"],
+			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+			  displayMath: [['$$','$$']],
+			  processEscapes: true, previewTeX: false},
+			  "HTML-CSS": {availableFonts:["TeX"]},
+			  MMLorHTML: {prefer: "MML"}
+			  });
+		</script>
+
+
+		 <title>Second Degree Equations</title>
+	</head>
+	
+	
+	<body onload='start(true)' >
+		
+           <!-- HEADER -->
+            <div id="header_wrap" class="outer">
+				<header class="inner">
+					<h2 id="project_tagline">Interactive Mathematics</h2>
+					<h1 id="project_title">Second Degree Equations with Coefficients</h1>
+				</header>
+           </div>
+            
+            <div id="main_content_wrap" class="outer">
+            <ul>
+            <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
+			<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Mathematics</a>
+            </ul>
+            
+            <!-- MAIN CONTENT -->
+             <section id="main_content" class="inner">
+             <h5> In this section, you will find how to factorize a second degree equation with a coefficients. Enjoy!</h4>
+             	
+             	
+				<p></p>
+				<h3>Quadratic trinomials with Coefficients</h3> 
+
+				<ul> 
+					<p>This is an example of a quadratic trinomial with coefficient and its factorization.</p>
+
+					</section>
+					<div class='jxgbox' style='margin-left:50px; width:600px; height:350px;'> 
+					
+             		  <input type="button" class="but" value='New Problem' onclick="start(true);" />
+             		  <input type="button" class="but" value='Next Step to solve' onclick="work();" />
+             		  <p></p>
+             		  <br></br>
+             		
+             		   <p type="text" id='explanationBox' class='text' style='width:570px; height:250px;'" ></p>
+             		</div> 
+             		
+					<div id="jxgbox" class="jxgbox" style="position:absolute; left:660px; top:430px; width:500px; height:350px;"></div>
+					
+					<script type="text/javascript" src="CoefficientSecondDegreeEquations.js"></script> 
+			
+					
+					<!--second example-->
+					<section class="inner">
+					
+					<p></p>
+					<!--<p>2. $ax +bx+c = (mx+h)(nx+k)$</p> -->
+					
+				
+					</section>
+				
+				</div>
+		
+       
+       <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Website maintained by <a>Abraham Adberstein</a></p>
+      
+      </footer>
+    </div>
+ 
+		
+        
+    </body>  
+</html> 
