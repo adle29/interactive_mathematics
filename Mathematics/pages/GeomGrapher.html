@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+	<head>
+		<html lang="es">
+    	<meta charset='utf-8' />
+    	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    	<meta name="description" content="Study " />
+    	<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<script type="text/javascript" src="jsxgraphcore.js"></script>	
+		<script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script>
+		 <script type="text/javascript" src="jquery/jquery-ui-1.8.17.custom.min.js"></script>
+		 <script type="text/javascript" src="mathjax/MathJax.js">
+			  MathJax.Hub.Config({
+			  config: ["MMLorHTML.js"],
+			  extensions: ["tex2jax.js", "TeX/noErrors.js", "TeX/AMSsymbols.js", "TeX/AMSmath.js"],
+			  menuSettings:{ zoom:"Hover"},
+			  jax: ["input/TeX"],
+			  tex2jax: {inlineMath: [['$','$'],['\\(','\\)']],
+			  displayMath: [['$$','$$']],
+			  processEscapes: true, previewTeX: false},
+			  "HTML-CSS": {availableFonts:["TeX"]},
+			  MMLorHTML: {prefer: "MML"}
+			  });
+			  
+			  
+		</script>
+		<title>Geometry Sketch</title> 
+		</head>
+
+<!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+         <!--  <a id="forkme_banner" href="https://github.com/adle29/interactive_mathematics">View on GitHub</a>-->
+
+          <h1 id="project_title">Geometry Sketch</h1>
+          <h2 id="project_tagline">In development</h2>
+
+            
+        </header>
+    </div>
+
+    
+    <body>      
+    	
+    	    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+
+    <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
+	<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Mathematics</a>
+	
+    
+      <section id="main_content" class="inner">
+    
+    	<div id="jxgbox" class="jxgbox" style="width:500px; height:400px;"></div>
+		<script type="text/javascript" src="geomGrapher.js"> </script>
+		
+		<div style="position:absolute; left: 510px; top:50px;">
+		   <button type="button"  onclick="createPoint ()">Points </button> <br>
+		   <button type="button"  onclick="createLine ()">Line </button> <br>
+		   <button type="button"  onclick="createPolygon ()">Polygon </button><br>
+		   <button type="button"  onclick="createCircle ()">Circle </button><br>
+		   <button type="button"  onclick="eraseBoard ()">Erase </button>  <br>
+		   <button type="button"  onclick="rectLine()">Straight Line </button> <br>
+		   <button type="button"  onclick="angle()">Angle</button> 
+		   
+		   
+		   
+       </div>
+       
+	 <!--  <textarea id="imprime" readonly="readonly" > </textarea>-->	
+	   
+	   
+	    </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Website maintained by <a>Abraham Adberstein</a></p>
+      
+      </footer>
+    </div>
+
+	   
+    </body>
+</html>
+
+
