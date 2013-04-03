@@ -96,9 +96,12 @@ function text () {
 }
 
 function drawFunction () {	
-
+	var display = document.getElementById("displayText"); 
+	var text = document.getElementById("graphing").value; 	
+	display.innerHTML += "&nbsp; f(x) = "+ text + "<br>"; 
 	var actualColor = colors[color];
-	eval("function f(x) { return "+ document.getElementById("graphing").value+";}");
+	
+	eval("function f(x) { return "+ text+";}");
 	var graph = board.createElement('functiongraph', [function(x){ return f(x); }], {strokeColor:actualColor, strokeWidth:3.0});
 	var element = document.getElementById("imprime");
 	color++;

@@ -89,6 +89,58 @@ Jxgbox
     border-color:black;
 }
 
+/*******************************************************************************
+graph buttons
+*******************************************************************************/
+
+.tools {
+	background-color:#FF0066;
+	border-radius:5px;
+	color:white;
+	width:150px;
+	text-transform:uppercase;
+}
+
+.tools:hover{
+	background-color:#CC33FF;
+}
+
+.tool2 {
+	background-color:#3399FF;
+	border-radius:5px;
+	border: groove white;
+	color:white;
+	width:130px;
+	margin: 10px;
+	text-transform:uppercase;
+}
+
+.tool2:hover{
+	background-color:#CC33FF;
+}
+
+.tool3{
+	border-radius:5px;
+	width:130px;
+	margin: 5px;
+}
+
+.view{
+	background:rgba(0,0,0,0.5);
+	width:150px;
+	border-radius:10px;
+	height:230px;
+	border: solid black;
+}
+
+.window{
+	border-radius:5px;
+	width:150px;
+	height:140px;
+	background:white;
+	overflow:auto;
+	
+}
 
 /*******************************************************************************
 Theme Styles

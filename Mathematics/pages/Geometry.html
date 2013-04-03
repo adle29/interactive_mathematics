@@ -56,16 +56,21 @@
     	<div id="jxgbox" class="jxgbox" style="width:500px; height:400px;"></div>
 		<script type="text/javascript" src="geom.js"> </script>
 		
-		<div>
-		   <button type="button"  onclick="createPoint ()">Points </button> 
-		   <button type="button"  onclick="createLine ()">Line </button> 
-		   <button type="button"  onclick="createPolygon ()">Polygon </button>
-		   <button type="button"  onclick="createCircle ()">Circle </button>
+		<div style="position:absolute; left: 510px; top:50px;">
+		   <button class="tools" type="button"  onclick="createPoint ()">Points </button> <br>
+		   <button class="tools" type="button"  onclick="createLine ()">Line </button> <br>
+		   <button class="tools" type="button"  onclick="createPolygon ()">Polygon </button><br>
+		   <button class="tools" type="button"  onclick="createCircle ()">Circle </button><br>
 		   <!--<button type="button"  onclick="createSlider ()">Slider </button> -->
-		   <button type="button"  onclick="eraseBoard ()">Erase </button>  
-		   <button type="button"  onclick="text ()">Text </button> 
-		   <input id="graphing" >
-		<button type="button" value="Graph" onClick="drawFunction()" >Enter</button>
+		   <button class="tools" type="button"  onclick="eraseBoard ()">Erase </button>  <br>
+		   <button class="tools" type="button"  onclick="text ()">Text </button> <br>
+		   
+			<div class="view"> 
+		  	 <input class="tool3" id="graphing" >
+		  	 <button class="tool2" type="button" value="Graph" onClick="drawFunction()" >Enter</button>
+		  	 <div id="displayText" class="window"></div> 
+		  	</div>
+		
        </div>
        
 	 <!--  <textarea id="imprime" readonly="readonly" > </textarea>-->	

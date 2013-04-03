@@ -62,7 +62,7 @@ function createLine () {
   		function(){return (p1.Y()+p2.Y())/2 },
   		function(){
   			dist = p1.Dist(p2);
-    		return 'ρ='+ dist.toFixed(2);
+    		return dist.toFixed(2);
     	}
     ]);
 	
@@ -73,6 +73,26 @@ function createLine () {
 function rectLine(){
 	var p1 = board.create('point',[0,-1], {name:letters[pointNum],size:3});
 	var p2 = board.create('point',[4,-1], {name:letters[pointNum+1],size:3});
+	
+	board.on('move', function(){
+        p1.moveTo([p1.X(),-1]);
+        p2.moveTo([p2.X(),-1]);
+	});
+	
+	
+	var li = board.create('line',[p1,p2], {strokeColor:'blue',strokeWidth:2});	
+	pointNum+=2;
+}
+
+function vertLine(){
+	var p1 = board.create('point',[2,1], {name:letters[pointNum],size:3});
+	var p2 = board.create('point',[2,-2], {name:letters[pointNum+1],size:3});
+	
+	board.on('move', function(){
+        p1.moveTo([2, p1.Y()]);
+        p2.moveTo([2, p2.Y()]);
+	});
+	
 	var li = board.create('line',[p1,p2], {strokeColor:'blue',strokeWidth:2});	
 	pointNum+=2;
 }
@@ -105,6 +125,14 @@ function angle(){
 	var n = name.split("");
 	console.log(n);
 	board.create('angle',n, {});
+}
+
+function conicSection () {
+	var p1 = board.create('point',[1,0]);
+	var p2 = board.create('point',[4,0]);
+	var p3 = board.create('point',[0,-1]);
+	var ci = board.create('ellipse',[p1,p2,p3]);
+
 }
 	
 
