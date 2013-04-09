@@ -25,29 +25,15 @@
         <div id="header_wrap" class="outer">
         	<header class="inner">
 				<h2 id="project_tagline">Interactive Chemistry</h2>
-				<h1 id="project_title">Periodic Table</h1>
+				<h1 id="project_title">Chem Sketcher</h1>
 			</header>
           </div>
           
     <div id="main_content_wrap" class="outer">       
        <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
        <section id="main_content" class="inner">
-         <h3>Periodic Table</h3>
-		 <script>
-  var periodicTable = new ChemDoodle.PeriodicTableCanvas('pt', 40);
-  periodicTable.click = function(evt){
-    if(this.hovered!=null){
-      var e = this.getHoveredElement();
-      var sb = [];
-      sb.push('Element: '+e.name+'\n');
-      sb.push('Symbol: '+e.symbol+'\n');
-      sb.push('Atomic Number: '+e.atomicNumber+'\n');
-      sb.push('Covalent Radius: '+e.covalentRadius+'\u212B\n');
-      sb.push('vdW Radius: '+e.vdWRadius+'\u212B\n');
-      alert(sb.join(''));
-    }
-  }
-</script>
+         <h3>Sketcher</h3>
+		 <script src='page.js' type='text/javascript'></script>
        </section>
     </div>
     

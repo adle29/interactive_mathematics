@@ -1,5 +1,18 @@
-var myCanvas = new ChemDoodle.ViewerCanvas('id', 500, 300);
-myCanvas.emptyMessage = 'No Data Loaded!';
-var caffeineMolFile = 'Molecule Name\n  CHEMDOOD08070920033D 0   0.00000     0.00000     0\n[Insert Comment Here]\n 14 15  0  0  0  0  0  0  0  0  1 V2000\n   -0.3318    2.0000    0.0000   O 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318    1.0000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -1.1980    0.5000    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    0.5342    0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -1.1980   -0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -2.0640    1.0000    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n    1.4804    0.8047    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    0.5342   -0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -2.0640   -1.0000    0.0000   O 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318   -1.0000    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    2.0640   -0.0000    0.0000   C 0  0  0  2  0  0  0  0  0  0  0  0\n    1.7910    1.7553    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n    1.4804   -0.8047    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318   -2.0000    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  3  2  1  0  0  0  0\n  4  2  1  0  0  0  0\n  3  5  1  0  0  0  0\n  3  6  1  0  0  0  0\n  7  4  1  0  0  0  0\n  4  8  2  0  0  0  0\n  9  5  2  0  0  0  0\n 10  5  1  0  0  0  0\n 10  8  1  0  0  0  0\n  7 11  1  0  0  0  0\n  7 12  1  0  0  0  0\n 13  8  1  0  0  0  0\n 13 11  2  0  0  0  0\n 10 14  1  0  0  0  0\nM  END\n> <DATE>\n07-08-2009\n';
-  var caffeine = ChemDoodle.readMOL(caffeineMolFile);
-  myCanvas.loadMolecule(caffeine);
+
+ // changes the default JMol color of hydrogen to black so it appears on white backgrounds
+  ChemDoodle.ELEMENT['H'].jmolColor = 'black';
+  // darkens the default JMol color of sulfur so it appears on white backgrounds
+  ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
+  // initializes the SketcherCanvas
+  var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 700, 300, {useServices:true, oneMolecule:false});
+  // sets terminal carbon labels to display
+  sketcher.specs.atoms_displayTerminalCarbonLabels_2D = true;
+  // sets atom labels to be colored by JMol colors, which are easy to recognize
+  sketcher.specs.atoms_useJMOLColors = true;
+  // enables overlap clear widths, so that some depth is introduced to overlapping bonds
+  sketcher.specs.bonds_clearOverlaps_2D = true;
+  // sets the shape color to improve contrast when drawing figures
+  sketcher.specs.shapes_color = 'c10000';
+  // because we do not load any content, we need to repaint the sketcher, otherwise we would just see an empty area with the toolbar
+  // however, you can instead use one of the Canvas.load... functions to pre-populate the canvas with content, then you don't need to call repaint
+  sketcher.repaint();
