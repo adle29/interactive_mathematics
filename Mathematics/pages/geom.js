@@ -1,4 +1,4 @@
-var board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:230, unitX:10, unitY:10, axis:true});
+var board = JXG.JSXGraph.initBoard('jxgbox', {originX:500, originY:230, unitX:10, unitY:10, axis:true});
 var letters =['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z'];
 var colors = ['#FF0000', '#00FF00','#0000FF','#FFFF00','#00FFFF','#FF00FF','9966FF','FF33FF'];
 var pointNum = 0;
@@ -81,6 +81,8 @@ function createSlider () {
 }	
 		
 function eraseBoard () {
+	var display = document.getElementById("displayText"); 
+	display.innerHTML = ""; 	
 	board = JXG.JSXGraph.freeBoard(board);
 	board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:250, unitX:10, unitY:10, axis:true});
 	pointNum = 0;
@@ -97,9 +99,9 @@ function text () {
 
 function drawFunction () {	
 	var display = document.getElementById("displayText"); 
-	var text = document.getElementById("graphing").value; 	
-	display.innerHTML += "&nbsp; f(x) = "+ text + "<br>"; 
-	var actualColor = colors[color];
+	var text = document.getElementById("graphing").value.toLowerCase(); 	
+		var actualColor = colors[color];
+	display.innerHTML += "<label style='margin-left:30px; font-size:24px; color:"+actualColor+";'> &nbsp; f(x) = "+ text + "</ label> <br>"; 
 	
 	eval("function f(x) { return "+ text+";}");
 	var graph = board.createElement('functiongraph', [function(x){ return f(x); }], {strokeColor:actualColor, strokeWidth:3.0});

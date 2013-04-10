@@ -135,7 +135,8 @@ graph buttons
 
 .tool3{
 	border-radius:5px;
-	width:130px;
+	width:120px;
+	height:20px;
 	margin: 5px;
 }
 
@@ -150,21 +151,12 @@ graph buttons
 }
 
 .view{
-	background:rgba(0,0,0,0.5);
+	background:rgba(0,0,0,0);
 	width:150px;
-	border-radius:10px;
-	height:230px;
-	border: solid black;
+	height:180px;
+	overflow:scroll;
 }
 
-.window{
-	border-radius:5px;
-	width:150px;
-	height:140px;
-	background:white;
-	overflow:auto;
-	
-}
 
 /*******************************************************************************
 Theme Styles
