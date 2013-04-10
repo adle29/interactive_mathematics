@@ -22,69 +22,40 @@
 			  processEscapes: true, previewTeX: false},
 			  "HTML-CSS": {availableFonts:["TeX"]},
 			  MMLorHTML: {prefer: "MML"}
-			  });
-			  
-			  
+			  });		  
 		</script>
 		<title>Geometry Sketch</title> 
 		</head>
 
-<!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-         <!--  <a id="forkme_banner" href="https://github.com/adle29/interactive_mathematics">View on GitHub</a>-->
 
-          <h1 id="project_title">Geometry Sketch</h1>
-          <h2 id="project_tagline">In development</h2>
-
-            
-        </header>
-    </div>
 
     
     <body>      
     	
     	    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-
-    <a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/index.html">Home</a>
-	<a id="forkme_banner" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Mathematics</a>
-	
     
-      <section id="main_content" class="inner">
-    
-    	<div id="jxgbox" class="jxgbox" style="width:500px; height:400px;"></div>
+       <div style="width:100%; height:500px;">
+    	<div id="jxgbox" class="jxgbox2" style="width:100%; height:100%;"></div>
 		<script type="text/javascript" src="geomGrapher.js"> </script>
 		
-		<div style="position:absolute; left: 510px; top:50px;">
-		   <button class="tools" type="button"  onclick="createPoint ()">Points </button> <br>
-		   <button class="tools" type="button"  onclick="createLine ()">Line </button> <br>
-		   <button class="tools" type="button"  onclick="createPolygon ()">Connect points </button><br>
-		   <button class="tools" type="button"  onclick="createCircle ()">Circle </button><br>
-		   <button class="tools" type="button"  onclick="conicSection()">Conic Section</button> 
-		   <button class="tools" type="button"  onclick="eraseBoard ()">Erase </button>  <br>
-		   <button class="tools" type="button"  onclick="rectLine()">Fixed Horizontal Line </button> <br>
-		   <button class="tools" type="button"  onclick="vertLine()">Fixed Vertical Line </button> <br>
-		   <button class="tools" type="button"  onclick="angle()">Angle</button> 
-		   
-		   
-		   
+		<div style="position:absolute; left:0px; top:0px;">
+		   <input class="tools" type="image" src="Images/point.gif" onclick="createPoint()" width="25" height="25">
+		   <input class="tools" type="image" src="Images/line.jpeg" onclick="createLine ()" width="25" height="25">
+		   <input class="tools" type="image" src="Images/polygon.jpeg" onclick="createPolygon ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/circle.jpeg" onclick="createCircle ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/line.jpeg" onclick="conicSection ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/erase.jpeg" onclick="eraseBoard ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/vertical.jpeg" onclick="rectLine ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/horizontal.jpeg" onclick="vertLine ()" width="25" height="25">	
+		   <input class="tools" type="image" src="Images/angle.jpeg" onclick="angle ()" width="25" height="25">	
+
        </div>
        
-	 <!--  <textarea id="imprime" readonly="readonly" > </textarea>-->	
-	   
-	   
-	    </section>
-    </div>
+	   </div>
+	   <br/>
+	    <a class="tool4" href="http://adle29.github.com/interactive_mathematics/Mathematics/index.html">Back</a>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Website maintained by <a>Abraham Adberstein</a></p>
-      
-      </footer>
-    </div>
-
+	   
 	   
     </body>
 </html>

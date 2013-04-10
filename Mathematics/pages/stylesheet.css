@@ -71,6 +71,21 @@ Jxgbox
         */
 }
 
+.jxgbox2 {
+     /*position:relative; for IE 7 */
+    overflow:hidden;
+    background-color:#ffffff;
+    border-style:solid;
+    border-width:1px;
+    border-color:#356AA0;
+
+    /*
+        -moz-box-shadow:black 2px 2px 2px -2px, #151A10 4px 4px;
+        -webkit-box-shadow:4px 4px 3px #151A10;
+        */
+}
+
+
 
 
 .JXGtext {
@@ -94,15 +109,14 @@ graph buttons
 *******************************************************************************/
 
 .tools {
-	background-color:#FF0066;
 	border-radius:5px;
-	color:white;
-	width:150px;
-	text-transform:uppercase;
+	border-style:solid;
+	border-width:1px;
+	margin-left:5px;
 }
 
 .tools:hover{
-	background-color:#CC33FF;
+	border-color:red;	
 }
 
 .tool2 {
@@ -123,6 +137,16 @@ graph buttons
 	border-radius:5px;
 	width:130px;
 	margin: 5px;
+}
+
+.tool4{
+	color:white; 
+	margin-left:20px;
+	
+}
+
+.tool4:hover{
+	color:red; 
 }
 
 .view{
