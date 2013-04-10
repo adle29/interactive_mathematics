@@ -152,7 +152,7 @@ graph buttons
 
 .view{
 	background:rgba(0,0,0,0);
-	width:150px;
+	width:400px;
 	height:180px;
 	overflow:scroll;
 }

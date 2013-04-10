@@ -84,7 +84,7 @@ function eraseBoard () {
 	var display = document.getElementById("displayText"); 
 	display.innerHTML = ""; 	
 	board = JXG.JSXGraph.freeBoard(board);
-	board = JXG.JSXGraph.initBoard('jxgbox', {originX:250, originY:250, unitX:10, unitY:10, axis:true});
+	board = JXG.JSXGraph.initBoard('jxgbox', {originX:500, originY:230, unitX:10, unitY:10, axis:true});
 	pointNum = 0;
 }		
 	
@@ -101,8 +101,8 @@ function drawFunction () {
 	var display = document.getElementById("displayText"); 
 	var text = document.getElementById("graphing").value.toLowerCase(); 	
 		var actualColor = colors[color];
-	display.innerHTML += "<label style='margin-left:30px; font-size:24px; color:"+actualColor+";'> &nbsp; f(x) = "+ text + "</ label> <br>"; 
-	
+	display.innerHTML += "<label style='margin-left:30px; font-size:24px; color:"+actualColor+";'>$ &nbsp; f(x) = "+ text + "$</ label> <br>"; 
+	 MathJax.Hub.Typeset('displayText'); // process math
 	eval("function f(x) { return "+ text+";}");
 	var graph = board.createElement('functiongraph', [function(x){ return f(x); }], {strokeColor:actualColor, strokeWidth:3.0});
 	var element = document.getElementById("imprime");
