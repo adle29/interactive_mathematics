@@ -244,7 +244,7 @@ initiate();
 (function animloop(){
 	  if (scene == 3) {
 		  requestAnimFrame(animloop);
-		  context.clearRect();
+		  context.clearRect(0,0,0,0);
 		  rules();
 		  background();
 		  bloodCell(x,y);
@@ -252,7 +252,7 @@ initiate();
 		  text();
 	  }
 	  else {
-	  	context.clearRect();
+	  	context.clearRect(0,0,0,0);
 	  	context.beginPath();
 		context.fillStyle="black";
 		context.fillRect(0,0,canvas.width,canvas.height);

@@ -339,7 +339,7 @@ initiate();
 (function animloop(){
 	  if (scene == 4) {
 		  requestAnimFrame(animloop);
-		  context.clearRect();
+		  context.clearRect(0,0,0,0);
 		  background();
 		  bloodCell(x,y);
 		  rules();
@@ -348,7 +348,7 @@ initiate();
 		  gameTime+= 0.00002;
 	  }
 	  else {
-	  	context.clearRect();
+	  	context.clearRect(0,0,0,0);
 	  	context.beginPath();
 		context.fillStyle="black";
 		//rgba(67, 0, 0, 1)

@@ -134,13 +134,13 @@ initiate();
 (function animloop(){
 	  if (scene == 0) {
 		  requestAnimFrame(animloop);
-		  context.clearRect();
+		  context.clearRect(0,0,0,0);
 		  background();
 		  bloodCell(x,y);
 		  move();
 	  }
 	  else {
-	  	context.clearRect();
+	  	context.clearRect(0,0,0,0);
 	  	context.beginPath();
 		context.fillStyle="black";
 		//rgba(67, 0, 0, 1)
